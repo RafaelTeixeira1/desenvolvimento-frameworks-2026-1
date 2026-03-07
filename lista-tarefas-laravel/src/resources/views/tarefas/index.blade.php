@@ -17,6 +17,7 @@
             <div>{{ $tarefa->titulo }}</div>
             <div>{{ $tarefa->descricao }}</div>
             <div>{{ $tarefa->status }}</div>
+            <div>{{ $tarefa->categoria->nome ?? 'Sem categoria'}}</div>
         </div>
 
         <div>

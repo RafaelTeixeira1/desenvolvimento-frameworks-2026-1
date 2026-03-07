@@ -27,4 +27,19 @@ $statusOptions = ['pendente' => 'Pendente', 'fazendo' => 'Fazendo', 'finalizada'
         </select>
         @error('status') <div>{{ $message }}</div> @enderror
     </div>
+
+   <div>
+    <label>Categoria</label>
+    <select name="categoria_id">
+        <option value="">Sem categoria</option>
+
+        @foreach($categorias as $categoria)
+            <option value="{{ $categoria->id }}"
+                @selected(old('categoria_id', $tarefa->categoria_id ?? '') == $categoria->id)>
+                {{ $categoria->nome }}
+            </option>
+        @endforeach
+    </select>
+
+</div>
 </div>
